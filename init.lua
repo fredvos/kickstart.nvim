@@ -936,5 +936,17 @@ require('lazy').setup({
   },
 })
 
+-- Accept tabs in Makefiles (https://www.reddit.com/r/neovim/comments/1fy4i8i/spaces_instead_of_tabs_in_makefiles/)
+vim.api.nvim_create_autocmd('FileType', {
+    desc = 'Ensures tabs are used on Makefiles instead of spaces',
+    callback = function(event)
+        if event.match == 'make' then
+            vim.o.expandtab = false -- also tried with vim.opt
+        end
+     end,
+})
+
+
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
