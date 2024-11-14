@@ -939,6 +939,9 @@ require('lazy').setup({
 -- Do not expand tabs to spaces
 vim.o.expandtab = false
 
+-- Configure black formatter in ~/.config/black
+-- Is a toml-file with [tool.black] record
+-- Fred Vos: in ~/Settings/shared/black/black.toml
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
